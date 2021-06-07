@@ -1,3 +1,5 @@
+const appleSound = new Audio("media/plop.wav");
+
 let apples = 0;
 
 AFRAME.registerComponent("apple-function", {
@@ -5,6 +7,7 @@ AFRAME.registerComponent("apple-function", {
     const el = this.el;
     this.el.addEventListener("click", getApple);
     function getApple() {
+      appleSound.play();
       el.setAttribute("visible", "false");
       apples++;
       el.removeEventListener("click", getApple);
