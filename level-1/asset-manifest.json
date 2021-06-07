@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/pleasantville/level-1/static/css/main.a42f49b7.chunk.css",
+    "main.js": "/pleasantville/level-1/static/js/main.41e1adf2.chunk.js",
+    "main.js.map": "/pleasantville/level-1/static/js/main.41e1adf2.chunk.js.map",
+    "runtime-main.js": "/pleasantville/level-1/static/js/runtime-main.cb2936ef.js",
+    "runtime-main.js.map": "/pleasantville/level-1/static/js/runtime-main.cb2936ef.js.map",
+    "static/js/2.d2f1fe3a.chunk.js": "/pleasantville/level-1/static/js/2.d2f1fe3a.chunk.js",
+    "static/js/2.d2f1fe3a.chunk.js.map": "/pleasantville/level-1/static/js/2.d2f1fe3a.chunk.js.map",
+    "index.html": "/pleasantville/level-1/index.html",
+    "static/css/main.a42f49b7.chunk.css.map": "/pleasantville/level-1/static/css/main.a42f49b7.chunk.css.map",
+    "static/js/2.d2f1fe3a.chunk.js.LICENSE.txt": "/pleasantville/level-1/static/js/2.d2f1fe3a.chunk.js.LICENSE.txt",
+    "static/media/atmo_hall_krejkrej.52c582c0.wav": "/pleasantville/level-1/static/media/atmo_hall_krejkrej.52c582c0.wav",
+    "static/media/bed.2baf8ebd.png": "/pleasantville/level-1/static/media/bed.2baf8ebd.png",
+    "static/media/bell.ad640922.png": "/pleasantville/level-1/static/media/bell.ad640922.png",
+    "static/media/door.c2692294.png": "/pleasantville/level-1/static/media/door.c2692294.png",
+    "static/media/face2.07845799.png": "/pleasantville/level-1/static/media/face2.07845799.png",
+    "static/media/hole2.f8909d18.png": "/pleasantville/level-1/static/media/hole2.f8909d18.png",
+    "static/media/hole4.b7a80891.png": "/pleasantville/level-1/static/media/hole4.b7a80891.png",
+    "static/media/hole5.560177bf.png": "/pleasantville/level-1/static/media/hole5.560177bf.png",
+    "static/media/hole9.a4d079b6.png": "/pleasantville/level-1/static/media/hole9.a4d079b6.png",
+    "static/media/hotel_bkg.515b1418.jpg": "/pleasantville/level-1/static/media/hotel_bkg.515b1418.jpg",
+    "static/media/key.b359a87d.png": "/pleasantville/level-1/static/media/key.b359a87d.png",
+    "static/media/plant.1892a7b9.png": "/pleasantville/level-1/static/media/plant.1892a7b9.png",
+    "static/media/postcard1.27e7e6c5.jpg": "/pleasantville/level-1/static/media/postcard1.27e7e6c5.jpg",
+    "static/media/poster1.1786d253.jpg": "/pleasantville/level-1/static/media/poster1.1786d253.jpg",
+    "static/media/poster2-2.293bd10c.png": "/pleasantville/level-1/static/media/poster2-2.293bd10c.png",
+    "static/media/poster2.959a5415.png": "/pleasantville/level-1/static/media/poster2.959a5415.png",
+    "static/media/poster3-2.76598ed7.png": "/pleasantville/level-1/static/media/poster3-2.76598ed7.png",
+    "static/media/poster3.85d952b2.png": "/pleasantville/level-1/static/media/poster3.85d952b2.png",
+    "static/media/poster4.4d37ccfb.jpg": "/pleasantville/level-1/static/media/poster4.4d37ccfb.jpg",
+    "static/media/room.92ca5427.png": "/pleasantville/level-1/static/media/room.92ca5427.png",
+    "static/media/wallpaper2.3dbabe8b.jpg": "/pleasantville/level-1/static/media/wallpaper2.3dbabe8b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb2936ef.js",
+    "static/js/2.d2f1fe3a.chunk.js",
+    "static/css/main.a42f49b7.chunk.css",
+    "static/js/main.41e1adf2.chunk.js"
+  ]
+}
