@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Dreamy Prospects</title>
+</head>
+<body>
+    <div class="postcard">
+      <div class="postcard-inner">
+        <img src="assets/images/postcard.png">
+      </div>
+    </div>
+
+      <!-- Scene -->
+
+      <a-scene
+        physics
+        restitution="1"
+        fog="color: #222; near: 0; far: 10"
+        vr-mode-ui="false"
+        renderer="antialias: true;
+                    colorManagement: true;
+                    sortObjects: true;
+                    physicallyCorrectLights: true;"
+      >
+        <a-entity id="camera" position="0 1.6 0" rotation="0 0 0">
+          <a-entity
+            camera
+            look-controls
+            wasd-controls="acceleration: 15"
+            kinematic-body
+          >
+          </a-entity>
+        </a-entity>
+        <a-sky></a-sky>
+        <a-plane
+          src="assets/images/tiles.jpg"
+          rotation="-90 0 0"
+          width="150"
+          height="150"
+          repeat="15 15"
+          static-body
+        ></a-plane>
+
+        <!--Text -->
+
+        <a-text
+          value="1"
+          font="https://cdn.aframe.io/fonts/SourceCodePro.fnt"
+          position="0 1.7 -5"
+          color="#eee"
+          align="center"
+          class="text"
+          static-body
+        ></a-text>
+        <a-text
+          value="2"
+          font="https://cdn.aframe.io/fonts/SourceCodePro.fnt"
+          position="0 1.7 -20"
+          color="#eee"
+          align="center"
+          class="text"
+          static-body
+        ></a-text>
+        <a-text
+          value="3"
+          font="https://cdn.aframe.io/fonts/SourceCodePro.fnt"
+          position="0 1.7 -35"
+          color="#eee"
+          align="center"
+          class="text"
+          static-body
+        ></a-text>
+
+        <!-- Spheres -->
+
+        <a-sphere
+          position="0 0.1 -13"
+          radius="0.4"
+          color="#fdfcf9"
+          dynamic-body="mass:7"
+        ></a-sphere>
+        <a-sphere
+          position="0.5 0.1 -12"
+          radius="0.5"
+          color="#fdfcf9"
+          dynamic-body="mass:10"
+        ></a-sphere>
+        <a-sphere
+          position="-1 0.1 -10.5"
+          radius="0.3"
+          color="#fdfcf9"
+          dynamic-body="mass:5"
+        ></a-sphere>
+        <a-sphere
+          position="-0.5 0.1 -14"
+          radius="0.5"
+          color="#fdfcf9"
+          dynamic-body="mass:10"
+        ></a-sphere>
+        <a-sphere
+          position="1 0.1 -15"
+          radius="0.2"
+          color="#fdfcf9"
+          dynamic-body="mass:3"
+        ></a-sphere>
+        <a-sphere
+          position="-1.5 0.1 -13"
+          radius="0.1"
+          color="#fdfcf9"
+          dynamic-body="mass:1"
+        ></a-sphere>
+        <a-sphere
+          position="-1.5 0.1 -11.5"
+          radius="0.6"
+          color="#fdfcf9"
+          dynamic-body="mass:10"
+        ></a-sphere>
+        <a-sphere
+          position="-1.8 0.1 -13.5"
+          radius="0.4"
+          color="#fdfcf9"
+          dynamic-body="mass:8"
+        ></a-sphere>
+        <a-sphere
+          position="-2.5 0.1 -13"
+          radius="0.4"
+          color="#fdfcf9"
+          dynamic-body="mass:6"
+        ></a-sphere>
+        <a-sphere
+          position="2 0.1 -10"
+          radius="0.3"
+          color="#fdfcf9"
+          dynamic-body="mass:4"
+        ></a-sphere>
+        <a-sphere
+          position="1.8 0.1 -13"
+          radius="0.5"
+          color="#fdfcf9"
+          dynamic-body="mass:8"
+        ></a-sphere>
+        <a-sphere
+          position="-0.5 0.1 -9.8"
+          radius="0.6"
+          color="#fdfcf9"
+          dynamic-body="mass:10"
+        ></a-sphere>
+
+        <a-plane
+          src="assets/images/qr-code-1.png"
+          rotation="-90 0 0"
+          position="0.35 0.01 -12.98"
+          width=".71"
+          height=".71"
+        ></a-plane>
+
+        <!-- Statue -->
+
+        <a-entity
+          position="0 0 -28"
+          gltf-model="assets/models/venus.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 4200;
+                      radiusTop: 200;
+                      radiusBottom: 200;
+                      offset: 0 0 0;"
+          scale="0.0012 0.0012 0.0012"
+        ></a-entity>
+
+        <a-plane
+          src="assets/images/qr-code-2.png"
+          rotation="0 -149.45 0"
+          position="3.99 1.5 -25.24"
+          width=".14"
+          height=".14"
+        ></a-plane>
+
+        <!-- Tree -->
+
+        <a-entity
+          gltf-model="assets/models/tree.glb"
+          body="type: static; shape: none;"
+          scale="4 4 4"
+          position="0 0 -42"
+          animation-mixer="clip: *;"
+          shape__trunk="shape: cylinder;
+                      height: 4;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;"
+          animation="property: rotation; dir: linear; dur: 100000; loop: true; easing: linear; to: 0 360 0;"
+        >
+        </a-entity>
+
+        <a-plane
+          src="assets/images/qr-code-3.png"
+          rotation="-90 0 0"
+          position="-3.7 0.01 -45.15"
+          width=".6"
+          height=".6"
+        ></a-plane>
+
+        <!-- Columns -->
+
+        <a-entity
+          position="4 4.3 -5"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -5"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -10"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -10"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -15"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -15"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -20"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -20"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -25"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -25"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -30"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -30"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -35"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -35"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          gltf-model="assets/models/column.glb"
+          position="4 4.3 -40"
+          animation-mixer="clip: *;"
+          scale="2 2 2"
+          dynamic-body="mass:1000;"
+        ></a-entity>
+        <a-entity
+          gltf-model="assets/models/column.glb"
+          position="-4 4.3 -40"
+          animation-mixer="clip: *;"
+          scale="2 2 2"
+          dynamic-body="mass:1000;"
+        ></a-entity>
+        <a-entity
+          gltf-model="assets/models/column.glb"
+          position="4 4.3 -45"
+          animation-mixer="clip: *;"
+          scale="2 2 2"
+          dynamic-body="mass:1000;"
+        ></a-entity>
+        <a-entity
+          gltf-model="assets/models/column.glb"
+          position="-4 4.3 -45"
+          animation-mixer="clip: *;"
+          scale="2 2 2"
+          dynamic-body="mass:1000;"
+        ></a-entity>
+        <a-entity
+          position="4 4.3 -50"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+        <a-entity
+          position="-4 4.3 -50"
+          gltf-model="assets/models/column.glb"
+          body="type: static; shape: none;"
+          animation-mixer="clip: *;"
+          shape__column="shape: cylinder;
+                      height: 3;
+                      radiusTop: 0.1;
+                      radiusBottom: 0.1;
+                      offset: 0 -1 0;"
+          scale="2 2 2"
+        ></a-entity>
+
+        <!-- Exit -->
+
+        <a-gltf-model
+          src="assets/models/door.glb"
+          position="0 1.9 -50"
+          animation-mixer="clip: *;"
+          scale="1 1 1"
+          rotation="0 90 0"
+          id="door"
+          static-body
+        ></a-gltf-model>
+
+        <a-gltf-model
+          src="assets/models/exit.glb"
+          position="0 4.5 -50"
+          animation-mixer="clip: *;"
+          scale="0.07 0.07 0.07"
+          rotation="0 0 0"
+          static-body
+        ></a-gltf-model>
+      </a-scene>
+
+      <!-- Modal -->
+      
+      <div class="modal-wrapper">
+        <div class="modal">
+          <p>How does that famous saying go...?</p>
+          <div class="saying">
+            An <input type="text" id="word-1" size="5" /> a day keeps <input type="text" id="word-2" size="6" /> at
+            <input type="text" id="word-3" size="3" />
+          </div>
+          <div class="buttons">
+            <button id="wake">Wake up</button>
+            <button id="cancel">Not yet</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
