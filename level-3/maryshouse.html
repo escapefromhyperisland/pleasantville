@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Old Mary's House</title>
+    <script src="https://unpkg.com/aframe@latest"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//unpkg.com/tone@14.8.25/build/Tone.js"
+    ></script>
+    <script src="aframe.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="speechbubble">
+      <p id="speechbubble-text">
+        <i>Mary:</i> Hello Dear,<br />
+        I can see that you want to ask me something?
+      </p>
+      <button id="speechbubble-button" onclick="conversationHandler()">
+        Continue
+      </button>
+    </div>
+    <a-scene renderer="physicallyCorrectLights: true">
+      <a-assets>
+        <img src="media/sky.png" id="sky" />
+      </a-assets>
+      <a-sky src="#sky" rotation="0 250 0"></a-sky>
+      <!-- src="media/grass.jpg" -->
+      <a-plane
+        material="color: #274d1a"
+        repeat="1000 1000"
+        rotation="-90 0 0"
+        scale="1000 1000 1"
+        shadow="receive: true"
+      ></a-plane>
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity
+        light="type: directional; color: #FFFFFF; intencity: 0.8; castShadow: true;"
+        position="1.45 5.1 -4"
+      ></a-entity>
+
+      <!-- Old lady -->
+      <a-image
+        position="0 1.5 -3"
+        src="media/oldlady.png"
+        height="3"
+        shadow="cast: true"
+      ></a-image>
+
+      <!-- Cloud -->
+      <a-image
+        id="cloud"
+        src="media/cloud.png"
+        width="6"
+        height="2"
+        position="0 20 0"
+        rotation="90 0 0"
+        visible="false"
+        event-set__tarvisible="_event: click; _target: #corn-reading; visible: true;"
+        event-set__tarposition="_event: click; _target: #corn-reading; position: -2 0 -4; dur: 3000; delay: 1500"
+        animation__rotation="startEvents: mouseenter; property: rotation; to: 90 10 0;"
+        cloud-function
+      >
+      </a-image>
+
+      <!-- Corn cobs and tarot cards -->
+      <a-entity position="-2 30 -4" id="corn-reading" visible="false">
+        <a-gltf-model
+          src="media/corn.glb"
+          position="0 0 0"
+          scale="0.03 0.03 0.03"
+          rotation="0 30 -90"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          src="media/corn.glb"
+          position="2 0 0"
+          scale="0.03 0.03 0.03"
+          rotation="0 0 90"
+        >
+        </a-gltf-model>
+
+        <a-image src="media/tarot1.png" position="0 0.1 1" rotation="-90 0 5">
+        </a-image>
+        <a-image
+          src="media/tarot2.png"
+          position="-1 0.1 1"
+          rotation="-90 0 -20"
+        >
+        </a-image>
+        <a-image src="media/tarot3.png" position="1 0.1 1" rotation="-90 0 10">
+        </a-image>
+      </a-entity>
+
+      <!-- house -->
+      <a-gltf-model
+        src="media/house.glb"
+        position="0 0 -12"
+        animation-mixer="clip: *;"
+        shadow="cast: true"
+        scale="0.5 0.5 0.5"
+      ></a-gltf-model>
+
+      <!-- Apple trees -->
+      <a-entity>
+        <a-gltf-model
+          src="media/appletree.glb"
+          position="-15 0 -12"
+          animation-mixer="clip: *;"
+          shadow="cast: true"
+        ></a-gltf-model>
+        <a-gltf-model
+          src="media/appletree.glb"
+          position="15 0 -12"
+          animation-mixer="clip: *;"
+          shadow="cast: true"
+        ></a-gltf-model>
+        <a-gltf-model
+          src="media/appletree.glb"
+          position="0 0 -22"
+          animation-mixer="clip: *;"
+          shadow="cast: true"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!-- Rose hedge -->
+      <a-entity>
+        <a-gltf-model
+          src="media/rosebush.glb"
+          position="-24 0 -5"
+          animation-mixer="clip: *;"
+          scale="0.05 0.05 0.05"
+          shadow="cast: true"
+        ></a-gltf-model>
+        <a-gltf-model
+          src="media/rosebush.glb"
+          position="-24 0 -7"
+          animation-mixer="clip: *;"
+          scale="0.05 0.05 0.05"
+          shadow="cast: true"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!-- Pears  -->
+      <a-gltf-model
+        src="media/pear.glb"
+        position="16 0.1 -12"
+        shadow
+        scale="0.05 0.05 0.05"
+        shadow="cast: true"
+      ></a-gltf-model>
+
+      <!-- Apples-->
+      <a-entity>
+        <a-gltf-model
+          id="apple-one"
+          src="media/apple.glb"
+          scale="0.05 0.05 0.05"
+          position="0 0 -16"
+          animation="startEvents: mouseenter; property: scale; to: 0.06 0.06 0.06;"
+          shadow="cast: true"
+          apple-function
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="apple-one"
+          src="media/apple.glb"
+          scale="0.05 0.05 0.05"
+          position="-16 0 -13"
+          animation="startEvents: mouseenter; property: scale; to: 0.06 0.06 0.06;"
+          shadow="cast: true"
+          apple-function
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="apple-one"
+          src="media/apple.glb"
+          scale="0.05 0.05 0.05"
+          position="2 0 -4"
+          animation="startEvents: mouseenter; property: scale; to: 0.06 0.06 0.06;"
+          shadow="cast: true"
+          apple-function
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="apple-one"
+          src="media/apple.glb"
+          scale="0.05 0.05 0.05"
+          position="-2 0 -21"
+          animation="startEvents: mouseenter; property: scale; to: 0.06 0.06 0.06;"
+          shadow="cast: true"
+          apple-function
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="apple-one"
+          src="media/apple.glb"
+          scale="0.05 0.05 0.05"
+          position="8 0 -12"
+          animation="startEvents: mouseenter; property: scale; to: 0.06 0.06 0.06;"
+          shadow="cast: true"
+          apple-function
+        >
+        </a-gltf-model>
+      </a-entity>
+
+      <!-- Kids -->
+      <a-entity>
+        <a-image
+          position="-3.49 1.78 -11.2"
+          src="media/kid.png"
+          height="0.52"
+          width="0.36"
+        ></a-image>
+        <a-image
+          position="4.4 4.75 -7.6"
+          src="media/kid2.png"
+          height="0.7"
+          width="0.6"
+        ></a-image>
+      </a-entity>
+
+      <a-entity id="rig" position="0 1 0">
+        <a-entity
+          id="camera"
+          camera
+          position="0 1.6 0"
+          look-controls="pointerLockEnabled: true"
+          wasd-controls="acceleration: 50;
+                          easing: 40"
+        >
+          <a-cursor></a-cursor>
+        </a-entity>
+      </a-entity>
+
+      <a-entity position="0 2 1" camera="active: false" id="second-camera">
+        <a-cursor></a-cursor>
+      </a-entity>
+    </a-scene>
+    <script src="script.js"></script>
+  </body>
+</html>

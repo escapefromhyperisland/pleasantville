@@ -1,0 +1,211 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#intro {
+  background-image: linear-gradient(black, grey);
+  height: 100vh;
+  font-family: "Waiting for the Sunrise", cursive;
+}
+
+a {
+  color: black;
+}
+
+.postcard {
+  max-width: 950px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.postcard img {
+  width: 100%;
+}
+
+.diary {
+  position: absolute;
+  width: 45%;
+  padding: 100px 40px;
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+#map {
+  background-image: url("media/map.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.woods {
+  background-color: #656618;
+  position: absolute;
+  top: 27%;
+  left: 23%;
+  border-radius: 50%;
+  border: none;
+  height: 100px;
+  width: 80px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.woods:hover {
+  background-color: #535412;
+}
+
+.house {
+  background-color: #614d34;
+  position: absolute;
+  top: 34%;
+  left: 54%;
+  border-radius: 2px;
+  border: 1px solid black;
+  height: 25px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.lake {
+  background-color: #7083c1;
+  position: absolute;
+  top: 30%;
+  left: 68%;
+  border-radius: 50%;
+  height: 270px;
+  width: 220px;
+}
+#password {
+  width: 70%;
+  display: block;
+  margin: 100px auto 0;
+}
+#message {
+  padding: 5px 30px;
+  margin: 0;
+  text-align: center;
+}
+
+.lake input {
+  height: 40px;
+  width: 200px;
+  background-color: #7083c1;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.compass {
+  position: absolute;
+  top: 9.5%;
+  right: 13.8%;
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.compass:hover {
+  transform: rotate(10deg);
+}
+
+.gas-station {
+  position: absolute;
+  top: 78%;
+  left: 38%;
+  height: 110px;
+  width: 90px;
+  background-color: transparent;
+  border: none;
+}
+.map-of {
+  position: absolute;
+  top: 76%;
+  right: 15%;
+  height: 130px;
+  width: 280px;
+  background-color: transparent;
+  border: none;
+  cursor: help;
+}
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.pattern {
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  margin: 200px auto;
+  position: relative;
+  padding: 10px;
+}
+
+#pattern-image {
+  width: 100%;
+}
+
+#close-pattern {
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#close-pattern:hover {
+  color: #656618;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Marys house */
+.speechbubble {
+  background-color: black;
+  border: 2px solid grey;
+  color: white;
+  border-radius: 20px;
+  width: 600px;
+  padding: 20px;
+  z-index: 10;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+#speechbubble-button {
+  background-color: white;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: "Courier New", Courier, monospace;
+  float: right;
+  margin-right: 8px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+#speechbubble-button:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
