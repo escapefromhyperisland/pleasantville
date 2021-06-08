@@ -25,12 +25,14 @@
         Continue
       </button>
     </div>
+    <div class="apples">
+      <p id="apples-text"></p>
+    </div>
     <a-scene renderer="physicallyCorrectLights: true">
       <a-assets>
         <img src="media/sky.png" id="sky" />
       </a-assets>
       <a-sky src="#sky" rotation="0 250 0"></a-sky>
-      <!-- src="media/grass.jpg" -->
       <a-plane
         material="color: #274d1a"
         repeat="1000 1000"
