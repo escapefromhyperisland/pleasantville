@@ -10,6 +10,7 @@
   box-shadow: 2px 2px 2px gray;
 }
 
+#end-message,
 #start {
   width: 500px;
   height: 260px;
@@ -22,7 +23,6 @@
   left: calc(50% - 250px);
   transform: rotate(-2deg);
 
-  display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
 
@@ -30,6 +30,15 @@
   background-size: contain;
 
   border-radius: 0px;
+}
+
+#start {
+  display: flex;
+}
+
+#end-message,
+.end {
+  display: none;
 }
 
 #title {
@@ -66,4 +75,12 @@
 #instructions2 {
   display: none;
   top: 25%;
+}
+
+#finished {
+  color: #ed2525;
+  position: absolute;
+  top: 80;
+  font-size: 3.5rem;
+  transform: rotate(45deg);
 }

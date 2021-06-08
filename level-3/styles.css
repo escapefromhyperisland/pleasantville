@@ -10,6 +10,13 @@ body {
   font-family: "Waiting for the Sunrise", cursive;
 }
 
+#level-title {
+  position: absolute;
+  top: 240px;
+  right: 200px;
+  font-family: "Courier New", Courier, monospace;
+}
+
 a {
   color: black;
 }
@@ -208,4 +215,15 @@ a {
 #speechbubble-button:hover {
   background-color: rgb(0, 0, 0);
   color: white;
+}
+
+.apples {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  font-size: 3rem;
+  z-index: 10;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  color: rgb(255, 204, 0);
 }

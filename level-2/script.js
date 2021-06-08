@@ -22,6 +22,9 @@ player.addEventListener("collide", function (e) {
       if (input1 == word1 && input2 == word2 && input3 == word3) {
         document.body.style.opacity = "0";
         ambience.pause();
+        setTimeout(function () {
+          window.parent.postMessage("nextLevel");
+        }, 1000);
       } else {
         modal.classList.add("wobble");
         modal.style.background = "#e72b49";
