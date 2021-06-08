@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>The Medium</title>
+    <title>Level 5 - The Medium</title>
     <meta name="The Medium" content="The Medium" />
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <!--     AFRAME EXTRA -->
@@ -16,8 +16,7 @@
     <!-- ******** With v3.0.0 you need to serve progressive-controls yourself ******** -->
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
     <script src="./js/progressive-controls.js" defer></script>
-    <!-- ******** THE PHYSICS SYSTEM HAS BEEN ORGANISED IN A SPECIFIC COMPONENT (no more aframe-extras) ******** -->
-    <!-- ******** You can find out more visiting the repo here: https://github.com/donmccurdy/aframe-physics-system ******** -->
+    <!-- ******** THE PHYSICS SYSTEM  ******** -->
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <!--  NAV MESH -->
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
@@ -40,7 +39,7 @@
         </p>
       </div>
       <div class="address">
-        <h1>Level V</h1>
+        <h1>Level 5</h1>
         <h2>The Medium</h2>
       </div>
     </div>
@@ -88,7 +87,10 @@
           id="chandelier"
           src="./assets/models/chandelier.glb"
         ></a-asset-item>
-        <a-asset-item id="pig" src="./assets/models/pig-bank.glb"></a-asset-item>
+        <a-asset-item
+          id="pig"
+          src="./assets/models/pig-bank.glb"
+        ></a-asset-item>
         <a-asset-item
           id="bookcase"
           src="./assets/models/bookcase1.glb"
@@ -101,6 +103,12 @@
           id="pillar"
           src="./assets/models/pillar.glb"
         ></a-asset-item>
+
+        <audio
+          id="bg-music"
+          src="assets/music/ES_The Blind Cat - Jerry Lacey.mp3"
+          preload="auto"
+        ></audio>
 
         <img id="wood" src="./assets/textures/wood.jpg" />
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
@@ -118,7 +126,7 @@
         />
         <img id="speechbubble" src="./assets/pictures/speech.png" />
         <img id="qr" src="assets/tarot/frame.png" />
-        <img id="sunny-field" src="assets/pictures/sunny-field.jpg" />
+        <img id="sunny-field" src="assets/pictures/sunrise-field.jpg" />
       </a-assets>
 
       <a-sky src="#sunny-field"></a-sky>
@@ -311,7 +319,14 @@
         position="4.8 0.3 -1"
         rotation="0 -90 0"
         scale="0.4 0.4 0.4"
-      ></a-gltf-model>
+
+      >
+      <a-sound
+      src="#bg-music"
+      loop="true"
+      volume="3"
+      ></a-sound>
+    </a-gltf-model>
       <a-gltf-model
         static-body
         src="#bookcase"
@@ -551,18 +566,19 @@
         side="double"
       >
         <a-text
-        font="https://cdn.aframe.io/fonts/Monoid.fnt"
-        position="0 0 -0.2"
-        value="Ok, this might not have been what you wanted to find out. 
+          font="https://cdn.aframe.io/fonts/Monoid.fnt"
+          position="0 0 -0.2"
+          value="Ok, this might not have been what you wanted to find out. 
         You should have paid me the bitcoins and continued to live in denial. 
         But you didn't and here you are. Now it's time to get out. 
         Beware of the policecars."
-        wrap-count="25"
-        width="1.5"
-        align="center"
-        color="black"
-        rotation="0 180 0"
-        > </a-text>
+          wrap-count="25"
+          width="1.5"
+          align="center"
+          color="black"
+          rotation="0 180 0"
+        >
+        </a-text>
       </a-image>
 
       <a-entity
@@ -581,7 +597,7 @@
             id="cam-text"
             font="https://cdn.aframe.io/fonts/Monoid.fnt"
             value="Follow the light!
-            I: Change perspective."
+            First task: Change perspective."
             color="white"
             position="-0.12 -0.07 -0.1"
             width="0.1"
