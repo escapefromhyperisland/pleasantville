@@ -172,17 +172,17 @@
         }
 
         if (id == 'price') {
-          var winner = document.getElementById('winner');
-          var attr_text = winner.getAttribute('text');
+          // var winner = document.getElementById('winner');
+          // var attr_text = winner.getAttribute('text');
 
           if(found.length < 4) {
-            attr_text.text = 'find more in order to exit';
-            winner.setAttribute('text', attr_text);
+            // attr_text.text = 'find more in order to exit';
+            // winner.setAttribute('text', attr_text);
 
-            setTimeout(() => {  
-              attr_text.text = "";
-              winner.setAttribute('text', attr_text);
-            }, 1500)
+            // setTimeout(() => {  
+            //   attr_text.text = "";
+            //   winner.setAttribute('text', attr_text);
+            // }, 1500)
             
           } else {
             clearInterval(counter);
