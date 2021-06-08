@@ -10,6 +10,13 @@ body {
   font-family: "Waiting for the Sunrise", cursive;
 }
 
+#level-title {
+  position: absolute;
+  top: 240px;
+  right: 200px;
+  font-family: "Courier New", Courier, monospace;
+}
+
 a {
   color: black;
 }
