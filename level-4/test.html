@@ -1,73 +1,92 @@
-<html>
 
-    <head>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Level 4 - Pleasantville -</title>
+    <meta name="description" content="level 4 of exploring code module game">
 
-        <meta charset="utf-8">
-        <title>Level 4 - Pleasantville -</title>
-        <meta name="description" content="level 4 of exploring code module game">
+    <!-- <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script> -->
 
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script> -->
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
 
-        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
-        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
-        <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
-        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
-        <!-- <script>
-        //drop test
-        AFRAME.registerComponent('droptest', {
-            play: function () {
-            this.el.addEventListener('drag-drop', function (evt) {
-                console.log("Dropped")
-                // evt.detail.dropped.setAttribute('material', 'color',
-                //   '#'+(Math.random()*0xFFFFFF<<0).toString(16));
-            });
-            }
-        }); 
-        </script> -->
-
-
-        <!-- CSS -->
-    <link rel="stylesheet" href="src/style.css">
-
+    <!-- CSS -->
+   <link rel="stylesheet" href="src/style.css">
 
     <script>
 
-        let coffee = false;
-        let beenToGate = false;
-  
-        // AFRAME.registerComponent('droptest', {
-        //     play: function () {
-        //     this.el.addEventListener('drag-drop', function (evt) {
-        //         console.log("Dropped")
-        //     });
-        //     }
-        // }); 
+      let coffee = false;
+      let beenToGate = false;
 
-        AFRAME.registerComponent('foo', {
-          init: function() {
-            this.el.addEventListener('collide', function(e) {
-              let id = e.detail.body.el.getAttribute('id');
-  
-              console.log('Player has collided with ', id);
-  
-              if (id == 'gate1' || id == 'gate2') {
-                console.log('gates are closed')
+      AFRAME.registerComponent('foo', {
+        init: function() {
+          this.el.addEventListener('collide', function(e) {
+            let id = e.detail.body.el.getAttribute('id');
+
+            // console.log('Player has collided with ', e.detail.body.el);
+            // e.detail.target.el; // Original entity (playerEl).
+            // e.detail.body.el; // Other entity, which playerEl touched.
+            // e.detail.contact; // Stats about the collision (CANNON.ContactEquation).
+            // e.detail.contact.ni; // Normal (direction) of the collision (CANNON.Vec3).
+
+            if (id == 'gate1' || id == 'gate2') {
+
+              if (coffee === true) {
+              window.location.href = 'maze.html';
+              } else {
+                beenToGate = true;
+                document.getElementById('text').innerHTML = 'The gates to the maze seems to be closed.. Maybe there\'s someone around here that can help'
+                document.querySelector('#instructions').style = 'display: block;';
+                console.log('get coffee first')
               }
-  
-              if (id === 'bench') {
-                  console.log('found man')
+            }
+
+            if (id === 'bench') {
+              if (beenToGate) {
+              console.log('found the man')
+              document.querySelector('#instructions2').style = 'display: block;';
+              } else {
+                document.getElementById('text').innerHTML = 'Good morning to you, what a loveley day'
+                document.querySelector('#instructions').style = 'display: block;';
+
               }
-              
-            });
-          }
-        })
-  
-      
-      </script>
-    </head>
+            }
+            
+          });
+          this.el.addEventListener('drag-drop', function(evt) {
+            evt.detail.dropped.setAttribute('material', 'color',
+              '#'+(Math.random()*0xFFFFFF<<0).toString(16))
+             // notify super-hands that the gesture was accepted
+            evt.preventDefault()
+          })
+        }
+      })
+
     
-    <body>
+    </script>
+</head>
+<body>
+<!-- 
+    
+    <div id='instructions' class="info-box">
+      <p id="text">The gates to the maze seems to be closed.. Lets go see if we can get some help to open them..</p>
+      <button type="button" id="ok-button">Ok</button>
 
+  </div>
+  
+  <div id="instructions2" class="info-box">
+    <p>"Before you can go into the maze you must get me a cup of coffee"</p>
+    <button type="button" id="start-camera">Start</button>
+
+  </div> -->
+
+  <!-- <div id="camera-container">
+    <div id="label-container"></div>
+    <div id="webcam-container"></div>
+  </div> -->
 
 
   <div id='start' class="info-box">
@@ -86,116 +105,52 @@
       <button type="button" id="start-button">Ok</button>
     </div>
   </div>
-    <a-scene physics fog="type: linear; color: #AAB; near: 0; far:14;">
 
-        <a-sky color="#007FF0"></a-sky>
-        <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="40" height="40" material="src:#asset_ground; repeat: 4 4"></a-plane>
+  <!-- ="debug: true" -->
+  <a-scene physics fog="type: linear; color: #AAB; near: 0; far:14;">
+    <a-sky color="#007FF0"></a-sky>
+    <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="40" height="40" material="src:#asset_ground; repeat: 4 4"></a-plane>
 
-        <a-assets>
-            <img src="assets/door.png" id="door">
-            <img src="assets/corn.jpg" id="asset_wall">
-            <img src="assets/exit3.png" id="asset_entrance">
-            <img src="assets/grass.jpg" id="asset_ground">
-            <img src="assets/crate.jpg" id="asset_crate">
+    <!-- ASSETS -->
+    <a-assets>
+        <img src="assets/door.png" id="door">
+        <img src="assets/corn.jpg" id="asset_wall">
+        <img src="assets/exit3.png" id="asset_entrance">
+        <img src="assets/grass.jpg" id="asset_ground">
+        <img src="assets/crate.jpg" id="asset_crate">
+
+        <a-asset-item src="assets/house2.glb" id="asset_house"></a-asset-item>
+    </a-assets>
     
-            <a-asset-item src="assets/house2.glb" id="asset_house"></a-asset-item>
-        </a-assets>
+    <!-- Camera Entity -->
+    <a-entity id="camera" position="0 1.6 0" rotation="0 0 0" progressive-controls="objects: .tape">
+      <!-- ="pointerLockEnabled: true" -->
+      <a-entity id="camera" camera look-controls wasd-controls kinematic-body foo>
 
-      <!-- super hands controls -->
-      <a-entity 
-        progressive-controls="objects: .tape, #bench"
-        position="0 1.6 0">
-        <a-entity 
-            look-controls
-            wasd-controls
-            kinematic-body
-            foo>
-        </a-entity>
+        <a-entity text="value: ; align: center;"  material="color:black" position="-0.6 0 -1" id="red"></a-entity>
+        <a-entity cursor="fuse: true; fuseTimeout: 500"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+                  material="color:#20639B; shader: flat"
+                  super-hands
+                  >
+                </a-entity>
       </a-entity>
+      <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity> -->
+    </a-entity>
 
-      <!-- grabbable etc. box -->
-      <!-- <a-box 
-        dynamic-body
-        hoverable 
-        grabbable 
-        stretchable 
-        draggable
-        event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true" 
-        event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" 
-        
-        id="tape_example"
-        class="tape"
+    <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="0.05" color="#FFC65D" shadow rotation="90 0 0" animation="property: rotation; dur: 5000; dir: alternate; loop: true; easing: linear; to:  0  0 360;"></a-cylinder> -->
 
-        position="0 0.75 -3"
-        material="src:#asset_crate; repeat: 1 1"
-        width="0.5" height="0.5" depth="0.5">
-      </a-box>
-      <a-box 
-        dynamic-body
-        hoverable 
-        grabbable 
-        stretchable 
-        draggable
-        event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true" 
-        event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" 
-        
-        id="tape_example"
-        class="tape"
+        <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+        <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 1 -4"></a-box>
 
-        position="0 1.25 -3"
-        material="src:#asset_crate; repeat: 1 1"
-        width="0.5" height="0.5" depth="0.5">
-      </a-box>
-      <a-box 
-      dynamic-body
-      hoverable 
-      grabbable 
-      stretchable 
-      draggable
-      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true" 
-      event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" 
-      id="tape_example"
-      class="tape"
+      <a-box dynamic-body position="0 0.75 -3" hoverable grabbable stretchable draggable dropppable rotation="0 10 0" width="0.5" height="0.75" depth="0.5" material="src:#asset_crate; repeat: 1 1"></a-box>
+      <a-box dynamic-body position="0 1.25 -3" grabbable width="0.5" height="0.75" depth="0.5" material="src:#asset_crate; repeat: 1 1"></a-box>
+      <a-box dynamic-body position="0 1.75 -3" grabbable rotation="0 20 0" width="0.5" height="0.75" depth="0.5" material="src:#asset_crate; repeat: 1 1"></a-box>
+      <a-box dynamic-body position="0 0.25 -3" grabbable width="0.5" height="0.75" depth="0.5" material="src:#asset_crate; repeat: 1 1"></a-box>
+      <a-box dynamic-body position="0 2.25 -3" grabbable rotation="0 10 0" width="0.5" height="0.75" depth="0.5" material="src:#asset_crate; repeat: 1 1"></a-box>
 
-      position="0 1.75 -3"
-      material="src:#asset_crate; repeat: 1 1"
-      width="0.5" height="0.5" depth="0.5">
-      </a-box>
-      <a-box 
-    dynamic-body
-    hoverable 
-    grabbable 
-    stretchable 
-    draggable
-    event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true" 
-    event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" 
-    
-    id="tape_example"
-    class="tape"
-
-    position="0 0.25 -3"
-    material="src:#asset_crate; repeat: 1 1"
-    width="0.5" height="0.5" depth="0.5">
-      </a-box>
-      <a-box 
-  dynamic-body
-  hoverable 
-  grabbable 
-  stretchable 
-  draggable
-  event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true" 
-  event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" 
-  
-  id="tape_example"
-  class="tape"
-
-  position="0 2.25 -3"
-  material="src:#asset_crate; repeat: 1 1"
-  width="0.5" height="0.5" depth="0.5">
-      </a-box> -->
-
-<!-- HOUSE -->
-<a-gltf-model
+    <a-gltf-model
         static-body
         src="assets/house2.glb"
         position="-3  0.7 -25"
@@ -205,121 +160,118 @@
         shadow
       ></a-gltf-model>
 
-      <!-- MAN -->
-      <a-entity position="-5 0.1 -10" static-body="" id="bench">
-      <a-gltf-model src="assets/man.glb" velocity="" animation-mixer="clip: *;" scale="0.5 0.5 0.5" shadow="" visible="" gltf-model=""  rotation="0 80 0" id="bench"></a-gltf-model>
-    </a-entity>
-
-    <a-box static-body position="0 0 1" width="45" height="4" depth="0.5" material="src:#asset_wall; repeat: 21 2"></a-box>
+    <a-box static-body position="0 0 1" width="45" height="4" depth="0.5" material="src:#asset_wall; repeat: 21 2"></a-box> -->
 
     <!-- CORN STALKS -->
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="-3 0 -2.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="-5.5 0 -2.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="4 0 -2.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="-1.5  0 -2.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="7 0 -2.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="-3 0 -0.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-        static-body
-        id='man'
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="-5.5 0 -0.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="4 0 -0.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="-1.5 0 -0.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="-3 0 -2.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+            static-body
+            id='man'
         ></a-gltf-model>
-    <a-gltf-model
-        src="assets/cornstalks.glb"
-        position="7 0 -0.5"
-        rotation=' 0 90 0'
-        animation-mixer="clip: *;"
-        scale="0.14 0.14 0.14"
-        shadow
-    ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="-5.5 0 -2.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="4 0 -2.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="-1.5  0 -2.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="7 0 -2.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="-3 0 -0.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+            static-body
+            id='man'
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="-5.5 0 -0.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="4 0 -0.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="-1.5 0 -0.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+            ></a-gltf-model>
+        <a-gltf-model
+            src="assets/cornstalks.glb"
+            position="7 0 -0.5"
+            rotation=' 0 90 0'
+            animation-mixer="clip: *;"
+            scale="0.14 0.14 0.14"
+            shadow
+        ></a-gltf-model>
 
-    <!-- TREES -->
+        <!-- TREES -->
     <a-gltf-model
-    src="assets/tree.glb"
-    position="0 0.7 4"
-    animation-mixer="clip: *;"
-    static-body
-    id="tree"
-    scale="2 2 2"
+      src="assets/tree.glb"
+      position="0 0.7 4"
+      animation-mixer="clip: *;"
+      static-body
+      id="tree"
+      scale="2 2 2"
     ></a-gltf-model>
     <a-gltf-model
-    src="assets/tree.glb"
-    position="-3 0.5 0"
-    animation-mixer="clip: *;"
-    static-body
-    id="tree"
-    scale="3 3 3"
+      src="assets/tree.glb"
+      position="-3 0.5 0"
+      animation-mixer="clip: *;"
+      static-body
+      id="tree"
+      scale="3 3 3"
     ></a-gltf-model>
     <a-gltf-model
-    src="assets/tree.glb"
-    position="5 0.7 -1"
-    animation-mixer="clip: *;"
-    id="tree"
-    static-body
-    scale="1 1 1" 
+      src="assets/tree.glb"
+      position="5 0.7 -1"
+      animation-mixer="clip: *;"
+      id="tree"
+      static-body
+      scale="1 1 1" 
     ></a-gltf-model>
 
 
@@ -327,12 +279,14 @@
     <a-gltf-model src="assets/gate.glb" animation-mixer="clip: *;" id="gate1" shadow="" static-body="" scale="1.5 1.5 1.5" gltf-model="" velocity="" rotation="0 10 0" position="-0.4 -1.6 1.95"></a-gltf-model>
     <a-gltf-model src="assets/gate.glb" animation-mixer="clip: *;" id="gate2" shadow="" static-body="" scale="1.5 1.5 1.5" gltf-model="" velocity="" position="0.2 -1.6 1.8"></a-gltf-model>
 
-    <!-- <a-gltf-model src="assets/man.glb" animation-mixer="clip: *;" scale="0.5 0.5 0.5" shadow="" static-body="" id="man" visible="" gltf-model="" position="-5 0.1 -10" rotation="0 80 0" velocity=""></a-gltf-model> -->
-
-    </a-scene>
+  </a-scene>
 
     <script src='src/intro.js'></script>
 
-  </body>
-    
-  </html>
+      <!-- TEACHABLE -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="src/teachable.js"></script>
+</body>
+</html>
+
