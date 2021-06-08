@@ -4,13 +4,13 @@ This is a part from the game project Escape from Hyper Island. A game with 7 wor
 This was created as part of Hyper Island's exploring code module, wherein we were encouraged to experiment with new technologies and think about aspects of the web experience that weren't necessarily related to code.
 
 Escape from Pleasantville is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville.
-You can't wait to get out and get home...
+You can't wait to get out and get home...  
 
 
 ## Play the live version here
 
 [Game start: ](https://escapefromhyperisland.github.io/pleasantville)  
-[Escape from Hyper Island: ](https://escapefromhyperisland.github.io)
+[Escape from Hyper Island: ](https://escapefromhyperisland.github.io)  
 
 
 **Tools and Tech stack:**
@@ -19,6 +19,7 @@ React
 A-frame: "A web framework for building 3D/AR/VR experiences"  
 Phaser: “Desktop and mobile HTML5 game framework.”  
 Aseprite: "Animated sprite editor and pixel art tool."  
+
 
 
 **Links to the other levels in the Pleasantville universe:**
