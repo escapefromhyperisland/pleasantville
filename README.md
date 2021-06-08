@@ -3,8 +3,7 @@
 This is a part from the game project Escape from Hyper Island. A game with 7 worlds with about 6 levels each.
 This was created as part of Hyper Island's exploring code module, wherein we were encouraged to experiment with new technologies and think about aspects of the web experience that weren't necessarily related to code.
 
-Escape from Pleasantville is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville.
-You can't wait to get out and get home...  
+Escape from Pleasantville is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville..
 
 
 ## Play the live version here
