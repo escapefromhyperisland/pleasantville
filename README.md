@@ -1,4 +1,5 @@
-#Escape from Pleasantville
+# Escape from Pleasantville
+
 This is a part from the game project Escape from Hyper Island. A game with 7 worlds with about 6 levels each.
 This was created as part of Hyper Island's exploring code module, wherein we were encouraged to experiment with new technologies and think about aspects of the web experience that weren't necessarily related to code.
 
@@ -6,7 +7,8 @@ Escape from Pleasantville is a story of the missing Alex, told through a series 
 You can't wait to get out and get home...
 
 ## Play the live version here
-[Game start: ](https://escapefromhyperisland.github.io/pleasantville)
+
+[Game start: ](https://escapefromhyperisland.github.io/pleasantville)  
 [Escape from Hyper Island: ](https://escapefromhyperisland.github.io)
 
 **Tools and Tech stack:**
