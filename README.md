@@ -21,7 +21,7 @@ Aseprite: "Animated sprite editor and pixel art tool."
 
 
 
-**Links to the all the levels in the Pleasantville universe:**
+**Links to all the levels in the Pleasantville universe:**
 
 - [Level 1 - Sofia Darke](https://github.com/sofiadarkeweb/pleasantville)
 - [Level 2 - Agnes Kalström](https://github.com/agneskalstrom/level-2-the-dream)
