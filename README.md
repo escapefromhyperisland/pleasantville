@@ -9,8 +9,8 @@ You can't wait to get out and get home...
 
 ## Play the live version here
 
-[Game start: ](https://escapefromhyperisland.github.io/pleasantville)  
-[Escape from Hyper Island: ](https://escapefromhyperisland.github.io)  
+[Plesantville Game start](https://escapefromhyperisland.github.io/pleasantville)  
+[Escape from Hyper Island](https://escapefromhyperisland.github.io)  
 
 
 **Tools and Tech stack:**
