@@ -30,10 +30,6 @@
         document.getElementById('speech-bubble').setAttribute('visible', 'true');
       }
 
-      let removeControl = () => {
-        // document.getElementById('camera').setAttribute('look-controls', '');
-      }
-
       AFRAME.registerComponent('foo', {
         init: function() {
           this.el.addEventListener('collide', function(e) {
@@ -144,9 +140,12 @@
   </div>
 
   <!-- ="debug: true" -->
-  <a-scene physics fog="type: linear; color: #AAB; near: 0; far:11;" renderer="physicallyCorrectLights: true;">
-    <a-sky color="#007FF0"></a-sky>
-    <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="45" height="45" material="src:#asset_ground; repeat: 6 6"></a-plane>
+  <!--   -->
+  <a-scene physics renderer="physicallyCorrectLights: true;" fog="type: linear; color: #AAB; near: 0; far:11;">
+    <!-- <a-sky color="#007FF0"></a-sky> -->
+    <a-sky src="#asset_sky"></a-sky>
+
+    <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="45" height="45" material="src:#asset_ground; repeat: 6 6; opacity: 0.7;"></a-plane>
 
     <!-- ASSETS -->
     <a-assets>
@@ -157,8 +156,12 @@
         <img src="assets/speech.png" id="asset_speech">
         <img src="assets/thought.png" id="asset_thought">
         <img src="assets/crate.jpg" id="asset_crate">
+        <img src="assets/sunrise-field.jpg" id="asset_sky">
+
     </a-assets>
     
+    <a-entity sound="src: url(assets/audio/backgroundnoise.mp3); autoplay: true; loop:true; distanceModel:linear">
+    </a-entity>
 
     <!-- ="pointerLockEnabled: true" -->
     <!-- Camera Entity -->
