@@ -4,10 +4,6 @@ const hideInstructions = () => {
 }
 
 document.querySelector('#start-button').addEventListener('click', hideInstructions)
-// document.querySelector('#ok-button').addEventListener('click', () => {
-//     document.querySelector('#instructions').style = 'display: none;'
-
-// })
 
 const openGates = () => {
     gate1.setAttribute('rotation', '0 90 0')

@@ -111,6 +111,7 @@
     <!--JavaScript Starts here-->
     <script>
       //  Reload Game Component
+      
       AFRAME.registerComponent('on-click', {
         init: function () {
           this.el.addEventListener('click', function (evt) {
@@ -120,6 +121,7 @@
       });
 
       /* Maze formation */
+      let found = [];
       
       var maze;
 
@@ -130,7 +132,6 @@
 
       // Player body collision Text display
       var cam = document.getElementById('camera');
-      let found = [];
 
       const think = (thought) => {
         let text = document.getElementById('thought-text');
@@ -147,7 +148,7 @@
 
       const addBoxToFound = (color) => {
         if (document.getElementById(color) !== null) {
-          found.push(color)
+          found.push(color) 
           document.getElementById(color).setAttribute('position', '0 -1 0');
           
           var progress = document.getElementById('found');
@@ -214,6 +215,7 @@
             
             attr_text.text = found;
             winner.setAttribute('text', attr_text);
+            window.sessionStorage.setItem('found', JSON.stringify(found));
             window.location.href="end.html"
           }
         }
