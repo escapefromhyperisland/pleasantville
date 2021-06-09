@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -39,8 +39,8 @@
 }
 
 .text {
-  font-family: 'Courier New', Courier, monospace;
-  top: -8vh;
+  font-family: "Courier New", Courier, monospace;
+  top: -11vh;
   position: relative;
   width: 600px;
   height: 20vh;
@@ -67,7 +67,7 @@
 .move-on {
   position: absolute;
   color: #ffaa05;
-  font-family: 'Staatliches';
+  font-family: "Staatliches";
   font-size: 3rem;
   top: 30vh;
   left: 50%;
