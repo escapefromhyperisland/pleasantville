@@ -103,7 +103,7 @@ const boxDelivered = (nr) => {
 
     endScene.removeChild(currentCrate)
     
-    if (crates.length === 4) {
+    if (crates.length === 0) {
 
         document.getElementById('speech').setAttribute('scale', '0.7 0.2 0.1');
 
