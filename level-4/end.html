@@ -88,14 +88,14 @@
   </div>
   
   <!-- fog="type: linear; color: #AAB; near: 0; far:14;"  -->
-    <a-scene physics id='end-scene'  renderer="physicallyCorrectLights: true;" >
-
+    <a-scene physics id='end-scene' renderer="physicallyCorrectLights: true;">
+      
         <a-sky src="#asset_sky"></a-sky>
-        <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="40" height="40" material="src:#asset_ground; repeat: 4 4; opacity: 0"></a-plane>
+        <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="200" height="200" material="src:#asset_ground; repeat: 14 14; opacity: 1;" color="orange"></a-plane>
 
         <a-assets>
             <img src="assets/door.png" id="door">
-            <img src="assets/corn.jpg" id="asset_wall">
+            <img src="assets/corn.png" id="asset_wall">
             <img src="assets/exit3.png" id="asset_entrance">
             <img src="assets/grass.jpg" id="asset_ground">
             <img src="assets/crate.jpg" id="asset_crate">
@@ -118,7 +118,8 @@
         foo
         >
         <a-entity 
-            look-controls
+        camera
+            look-controls="pointerLockEnabled: true"
             wasd-controls
             >
         </a-entity>
@@ -150,7 +151,7 @@
     <!-- <a-gltf-model src="#asset_key" animation-mixer="clip: *;" static-body="" 
       id="key" rotation="" visible="" gltf-model="" scale="0.2 0.2 0.2" position="-5 0.1 -11.7"></a-gltf-model> -->
 
-    <!-- <a-box static-body position="0 0 1" width="45" height="4" depth="0.5" material="src:#asset_wall; repeat: 21 2"></a-box> -->
+    <a-image static-body position="0 0 1" width="200" height="6" material="src:#asset_wall; repeat: 60 2"></a-image>
 
     <!-- CORN STALKS -->
     <a-gltf-model
