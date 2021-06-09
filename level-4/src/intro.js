@@ -74,33 +74,9 @@ async function predict() {
             
             setTimeout(() => {  
                 document.getElementById('speech-bubble').setAttribute('visible', 'false');
-            }, 8000)
+            }, 10000)
             
             webcam.stop();
-        // const classPrediction =
-        //     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        // labelContainer.childNodes[i].innerHTML = classPrediction;
-
-        // document.getElementById('boxes').setAttribute('position', '-5 0 -1.5');
-
-        // character = document.createElement("a-box");
-        // character.setAttribute('static-body','');
-    
-        // character.setAttribute('height',2);
-        // character.setAttribute('width',1);
-    
-        // // character.setAttribute('look-at', '#camera');
-        // character.setAttribute('rotation','0 45 10');
-        // character.setAttribute('id', 'character');
-        // character.setAttribute('on-gaze','');
-        // character.setAttribute('position','-25.5 1.2 -20');
-        // character.setAttribute('color', 'red')
-        // // character.setAttribute('src', '#asset_character');
-        // // character.setAttribute('animation-mixer', 'clip: *;')
-        // character.setAttribute('shadow', "type: basic")
-        // // entity.appendChild(character); 
-        // document.getElementById('scene').appendChild(character); 
-    
 }
     }
 }
