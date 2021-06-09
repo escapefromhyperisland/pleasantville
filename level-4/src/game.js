@@ -86,4 +86,4 @@ let addDoor = () => {
 
 setTimeout(() => {  
   document.getElementById('skip').style = "display: flex;";
-}, (600)) // show after 3 min
+}, (60000 * 3)) // show after 3 min
