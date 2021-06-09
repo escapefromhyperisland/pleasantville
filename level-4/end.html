@@ -40,6 +40,8 @@
                 }
                 
                 if (current.id === 'key' && id === 'key-hole') {
+                  endScene.removeChild(document.getElementById('key'))
+
                   document.querySelector('#end-message').style = 'display: flex;'
                 }
 
@@ -89,9 +91,10 @@
   
   <!-- fog="type: linear; color: #AAB; near: 0; far:14;"  -->
     <a-scene physics id='end-scene' renderer="physicallyCorrectLights: true;">
-      
         <a-sky src="#asset_sky"></a-sky>
-        <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="200" height="200" material="src:#asset_ground; repeat: 14 14; opacity: 1;" color="orange"></a-plane>
+        <a-plane static-body rotation="-90 0 0" position="0 0 0" width="200" height="200" material="src:#asset_ground; repeat: 14 14; opacity: 1;" color="orange"></a-plane>
+
+        <!-- <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="40" height="40" material="src:#asset_ground; repeat: 4 4; opacity: 0"></a-plane> -->
 
         <a-assets>
             <img src="assets/door.png" id="door">
