@@ -30,15 +30,6 @@
         document.getElementById('speech-bubble').setAttribute('visible', 'true');
       }
 
-      // AFRAME.registerComponent('crates', {
-      //   update: function() {
-      //     this.el.addEventListener('click', function(e) {
-      //       console.log('was clicked ')
-
-      //     })
-      //   }
-      // })
-
       AFRAME.registerComponent('foo', {
         init: function() {
           this.el.addEventListener('collide', function(e) {
@@ -90,10 +81,8 @@
               speak('Thank you, the gates are now open. Don\'t forget my crates in there')
               openGates();
             }
-
-
-            
           });
+
           this.el.addEventListener('click', function(e) {
 
             let id = e.detail.intersectedEl.id;
@@ -119,8 +108,11 @@
       <h3>The Maze</h3>
     </div>
     <div id="description">
-      <p>The old lady told me to go talk to the Medium. Apparently I have to go through Pleasantville's Enchanting Corn Maze in order to get there..</p>
-       
+      <p>
+        Hang in there, Alex. I feel like I’m getting closer. Everything is pointing towards the outskirts of town. I just have to go through the corn maze to get to the Medium. I’m sure it can’t be too difficult..
+      </p>
+      
+      <!-- The old lady told me to go talk to the Medium. Apparently I have to go through Pleasantville's Enchanting Corn Maze in order to get there.. -->
       <!-- You are on your way to the Medium. But in order to get there you need 
         to go through Pleasantville's Enchanting Corn Maze.. -->
 
