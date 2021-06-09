@@ -5,8 +5,9 @@ body {
 }
 
 #intro {
-  background-image: linear-gradient(black, grey);
-  height: 100vh;
+  background-image: url("media/bg-intro.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Waiting for the Sunrise", cursive;
 }
 

@@ -1,8 +1,11 @@
 const title = document.querySelector('.title')
 const instructions = document.querySelector('.instructions')
+const moveOnText = document.querySelector('.move-on')
 const wide = document.querySelector('.wide')
 const narrow = document.querySelector('.narrow')
 const cards = document.querySelector('.cards')
+const postcard = document.querySelector('.postcard-wrapper')
+const text = document.querySelector('.postcard-text-wrapper')
 
 window.addEventListener('keydown', showTitle)
 console.log(instructions)
@@ -27,5 +30,16 @@ function showNarrow(e) {
 }
 
 function showPostcard() {
-  console.log('hey')
+  cards.removeEventListener('click', showPostcard)
+  postcard.style.display = 'flex'
+  text.style.display = 'flex'
+  cards.style.display = 'none'
+  moveOnText.style.display = 'block'
+  window.addEventListener('keydown', moveOn)
+}
+
+function moveOn(e) {
+  if (e.key === 'Enter') {
+    window.parent.postMessage('nextLevel')
+  }
 }
