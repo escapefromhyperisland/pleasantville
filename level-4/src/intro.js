@@ -105,3 +105,6 @@ async function predict() {
     }
 }
 
+setTimeout(() => {  
+    document.getElementById('skip').style = "display: flex;";
+}, (60000 * 3)) // show after 3 min

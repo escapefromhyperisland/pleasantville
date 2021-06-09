@@ -88,6 +88,15 @@
       </button>
     </div>
   </div>
+
+
+  <div id='skip' class="info-box">
+    <p id="text">Too hard? Skip to the next section..</p>
+    <button type="button" id="skip-button" onclick="
+      document.querySelector('#end-message').style = 'display: flex;';
+      document.getElementById('skip').style = 'display: none;'; ">
+      Next -></button>
+ </div>
   
   <!-- fog="type: linear; color: #AAB; near: 0; far:14;"  -->
     <a-scene physics id='end-scene' renderer="physicallyCorrectLights: true;">

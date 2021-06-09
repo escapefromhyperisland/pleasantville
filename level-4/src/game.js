@@ -82,3 +82,8 @@ let addDoor = () => {
       console.log('door was added at ' + (3*(free2-(maze_width-1)*.5))+' 1 '+(3*(free1-(maze_height-1)*.5)))
 
 }
+
+
+setTimeout(() => {  
+  document.getElementById('skip').style = "display: flex;";
+}, (600)) // show after 3 min
