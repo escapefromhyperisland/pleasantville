@@ -458,18 +458,25 @@
       
       <div class="modal-wrapper">
         <div class="modal">
-          <p>How does that famous saying go...?</p>
+          <p>How does that saying go...?</p>
           <div class="saying">
-            An <input type="text" id="word-1" size="5" /> a day keeps <input type="text" id="word-2" size="6" /> at
-            <input type="text" id="word-3" size="3" />
+            <span class="reveal-1">..</span> <input type="text" id="word-1" size="5" placeholder="1" /><span id="check-1" class="check"></span> <span class="reveal-2">. ...</span> <span class="reveal-3"> .....</span> <input type="text" id="word-2" size="6" placeholder="2" /><span id="check-2" class="check"></span> <span class="reveal-4">..</span>
+            <input type="text" id="word-3" size="3" placeholder="3" /><span id="check-3" class="check"></span>
           </div>
           <div class="buttons">
-            <button id="wake">Wake up</button>
-            <button id="cancel">Not yet</button>
+            <div class="buttons-left">
+              <button id="wake">Wake up</button>
+              <button id="cancel">Not yet</button>
+            </div>
+            <div class="buttons-right">
+              <button id="hint">Hint?</button>
+            </div>
+          </div>
+          <div class="hint-box">
+            <p id="hint-text"></p>
           </div>
         </div>
-    </div>
-  </div>
+      </div>
 
     <script src="script.js"></script>
 

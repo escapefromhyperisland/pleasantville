@@ -59,11 +59,6 @@ body {
   padding: 30px;
 }
 
-.wobble {
-  animation: headShake;
-  animation-duration: 0.5s;
-}
-
 .saying {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -86,11 +81,35 @@ input:focus {
   outline: 0;
 }
 
+::placeholder {
+  color: #eee;
+  opacity: .8;
+}
+
+.check {
+  display: inline-block;
+  width: 8px;
+}
+
+.right {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 button {
   background: transparent;
   color: #eee;
   padding: 10px;
   font-family: "Courier New", Courier, monospace;
+  border: 0;
 }
 
 button:focus {
@@ -108,4 +127,21 @@ button:hover {
 
 #cancel {
   border: 0;
+}
+
+#hint {
+  opacity: .5;
+  padding-right: 0;
+}
+
+.hint-box {
+  opacity: .5;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+#hint-text {
+  height: 30px;
+  margin: 0;
+
 }
