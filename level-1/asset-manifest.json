@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/pleasantville/level-1/static/css/main.5bbb8039.chunk.css",
-    "main.js": "/pleasantville/level-1/static/js/main.7fc48624.chunk.js",
-    "main.js.map": "/pleasantville/level-1/static/js/main.7fc48624.chunk.js.map",
+    "main.css": "/pleasantville/level-1/static/css/main.5b1740ca.chunk.css",
+    "main.js": "/pleasantville/level-1/static/js/main.70775db3.chunk.js",
+    "main.js.map": "/pleasantville/level-1/static/js/main.70775db3.chunk.js.map",
     "runtime-main.js": "/pleasantville/level-1/static/js/runtime-main.cb2936ef.js",
     "runtime-main.js.map": "/pleasantville/level-1/static/js/runtime-main.cb2936ef.js.map",
-    "static/js/2.dfcebda1.chunk.js": "/pleasantville/level-1/static/js/2.dfcebda1.chunk.js",
-    "static/js/2.dfcebda1.chunk.js.map": "/pleasantville/level-1/static/js/2.dfcebda1.chunk.js.map",
+    "static/js/2.84bc7af5.chunk.js": "/pleasantville/level-1/static/js/2.84bc7af5.chunk.js",
+    "static/js/2.84bc7af5.chunk.js.map": "/pleasantville/level-1/static/js/2.84bc7af5.chunk.js.map",
     "index.html": "/pleasantville/level-1/index.html",
-    "static/css/main.5bbb8039.chunk.css.map": "/pleasantville/level-1/static/css/main.5bbb8039.chunk.css.map",
-    "static/js/2.dfcebda1.chunk.js.LICENSE.txt": "/pleasantville/level-1/static/js/2.dfcebda1.chunk.js.LICENSE.txt",
-    "static/media/atmo_hall_krejkrej.52c582c0.wav": "/pleasantville/level-1/static/media/atmo_hall_krejkrej.52c582c0.wav",
+    "static/css/main.5b1740ca.chunk.css.map": "/pleasantville/level-1/static/css/main.5b1740ca.chunk.css.map",
+    "static/js/2.84bc7af5.chunk.js.LICENSE.txt": "/pleasantville/level-1/static/js/2.84bc7af5.chunk.js.LICENSE.txt",
     "static/media/bed.2baf8ebd.png": "/pleasantville/level-1/static/media/bed.2baf8ebd.png",
     "static/media/bell.ad640922.png": "/pleasantville/level-1/static/media/bell.ad640922.png",
     "static/media/door.c2692294.png": "/pleasantville/level-1/static/media/door.c2692294.png",
@@ -30,13 +29,14 @@
     "static/media/poster3.85d952b2.png": "/pleasantville/level-1/static/media/poster3.85d952b2.png",
     "static/media/poster4.4d37ccfb.jpg": "/pleasantville/level-1/static/media/poster4.4d37ccfb.jpg",
     "static/media/room.92ca5427.png": "/pleasantville/level-1/static/media/room.92ca5427.png",
+    "static/media/soundtrack2.161026eb.mp3": "/pleasantville/level-1/static/media/soundtrack2.161026eb.mp3",
     "static/media/wallpaper1.843de1a6.jpg": "/pleasantville/level-1/static/media/wallpaper1.843de1a6.jpg",
     "static/media/wallpaper2.6fabd648.jpg": "/pleasantville/level-1/static/media/wallpaper2.6fabd648.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.cb2936ef.js",
-    "static/js/2.dfcebda1.chunk.js",
-    "static/css/main.5bbb8039.chunk.css",
-    "static/js/main.7fc48624.chunk.js"
+    "static/js/2.84bc7af5.chunk.js",
+    "static/css/main.5b1740ca.chunk.css",
+    "static/js/main.70775db3.chunk.js"
   ]
 }

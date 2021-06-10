@@ -5,8 +5,10 @@ body {
 }
 
 #intro {
-  background-image: linear-gradient(black, grey);
-  height: 100vh;
+  background-image: url("media/bg-intro.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
   font-family: "Waiting for the Sunrise", cursive;
 }
 
@@ -45,6 +47,7 @@ a {
   background-image: url("media/map.png");
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
   font-family: "Courier New", Courier, monospace;
 }
 
