@@ -9,7 +9,7 @@ Escape from Pleasantville is a story of the missing Alex, told through a series 
 ## Play the live version here
 
 [Plesantville Game start](https://escapefromhyperisland.github.io/game/?world=5)  
-[Escape from Hyper Island](https://escapefromhyperisland.github.io)  
+[Escape from Hyper Island](https://escapefromhyperisland.github.io/game/?world=0)  
 
 
 **Tools and Tech stack:**
