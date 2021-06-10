@@ -1,12 +1,11 @@
 .info-box {
   z-index: 100;
   position: relative;
-  background-color: yellow;
+  background-color: rgb(221, 221, 185);
   width: 300px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  border-radius: 10px;
   box-shadow: 2px 2px 2px gray;
 }
 
@@ -26,7 +25,7 @@
   flex-direction: row-reverse;
   justify-content: space-between;
 
-  background-image: url("/assets/postcard.webp");
+  background-image: url("https://raw.githubusercontent.com/escapefromhyperisland/pleasantville/master/level-4/assets/postcard.webp");
   background-size: contain;
 
   border-radius: 0px;
@@ -68,14 +67,30 @@
   z-index: 100;
 }
 
-#instructions {
+#skip {
+  display: none;
+  height: 50px;
+  /* display: flex; */
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 97vw;
+  margin-right: 150px;
+  position: fixed;
+  bottom: 0;
+}
+
+#skip-button {
+  margin: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: large;
+}
+/* #instructions2 {
   display: none;
   top: 25%;
-}
-#instructions2 {
-  display: none;
-  top: 25%;
-}
+} */
 
 #finished {
   color: #ed2525;

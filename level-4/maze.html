@@ -41,6 +41,11 @@
       </div>
     </div>
 
+    <div id='skip' class="info-box">
+      <p id="text">Too hard? Skip to the next section..</p>
+      <button type="button" id="skip-button" onclick="window.location.href = 'end.html';">Next -></button>
+   </div>
+   
     <!--Anchored VR Design-->
     <!--Aframe scene starts here-->
     <a-scene physics id="scene" fog="type: linear; color: #AAB; near: 0; far:10;" >
@@ -175,23 +180,23 @@
           // var winner = document.getElementById('winner');
           // var attr_text = winner.getAttribute('text');
 
-          if(found.length < 4) {
-            // attr_text.text = 'find more in order to exit';
-            // winner.setAttribute('text', attr_text);
+          // if(found.length < 4) {
+          //   // attr_text.text = 'find more in order to exit';
+          //   // winner.setAttribute('text', attr_text);
 
-            // setTimeout(() => {  
-            //   attr_text.text = "";
-            //   winner.setAttribute('text', attr_text);
-            // }, 1500)
+          //   // setTimeout(() => {  
+          //   //   attr_text.text = "";
+          //   //   winner.setAttribute('text', attr_text);
+          //   // }, 1500)
             
-          } else {
+          // } else {
             clearInterval(counter);
             
             // attr_text.text = found;
             // winner.setAttribute('text', attr_text);
             window.sessionStorage.setItem('found', JSON.stringify(found));
             window.location.href="end.html"
-          }
+          // }
         }
 
       });
